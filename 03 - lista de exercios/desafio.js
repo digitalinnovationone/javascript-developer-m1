@@ -10,6 +10,21 @@
     - Média acima de 7, passou de semestre;
 */
 
+nota1 = 8;
+nota2 = 7;
+nota3 = 8;
+
+media = (nota1 + nota2 + nota3) / 3;
+
+if(media <= 5){
+    console.log('Reprovação! Pois sua nota é', media.toFixed(2))
+}else if(media > 5 && media < 7){
+    console.log('Recuperação. Nota:', media.toFixed(2))
+}else{
+    console.log('Aprovado com nota:', media.toFixed(2))
+}
+
+
 /*
     2) O IMC – Indice de Massa Corporal é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta. 
 
