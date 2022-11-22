@@ -10,3 +10,13 @@
 //             Recuperação
 
 const { gets, print } = require('./funcoes-auxiliares-ex1');
+
+let media = gets();
+
+if (media < 5) {
+  print('Reprovado');
+}else if (media >= 5 && media <7){
+  print('REC');
+} else if (media >= 7){
+  print('APR')
+}

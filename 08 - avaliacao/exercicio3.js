@@ -1,4 +1,3 @@
-
 // 3) Faça um programa que calcule e imprima o salário salário a ser transferido para um funcionário.
 // Para realizar o calculo receba o valor bruto do salário e o adicional dos benefícios.
 // O salário salário a ser transferido é calculado da seguinte maneira: 
@@ -19,4 +18,30 @@
 //         Saída:
 //             2050.00
 
-const { gets, print } = require('./funcoes-auxiliares-ex3');
+const { gets, print } = require('./auxiliar');
+
+const salarioBruto = gets();
+const benefícios = gets();
+var salarioLiq = 0
+
+function CalcularPorc(salario, percentual){
+   return salario * (percentual/100);
+}
+
+function pegarPorcentagemComBaseNoSalario(salario){
+
+    if(salario < 1100){
+        return 5;
+    } else if(1100 < salario && salario <= 2500){
+        return 10 ;
+    } else if(salario > 2500){
+        return 15;
+    } else{
+        print ('verificar erro')
+    }
+}
+
+const valorATransferir = salarioBruto - CalcularPorc(salarioBruto, (pegarPorcentagemComBaseNoSalario(salarioBruto)));
+const Pagamento = valorATransferir + benefícios;
+
+print(Pagamento);
